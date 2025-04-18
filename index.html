@@ -1,1 +1,109 @@
-# SmartHelpZone
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartHelp Zone</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e0eafc);
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    p.tagline {
+      font-size: 18px;
+      color: #34495e;
+    }
+    .menu {
+      margin-top: 40px;
+    }
+    .menu button {
+      padding: 15px 30px;
+      margin: 15px;
+      font-size: 16px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .menu button:hover {
+      background-color: #2980b9;
+    }
+    .form-section {
+      display: none;
+      margin-top: 30px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+    textarea, input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .submit-btn {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #219150;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SmartHelp Zone</h1>
+  <p class="tagline">আপনার সমস্যার ডিজিটাল সমাধান</p>
+
+  <div class="menu">
+    <button onclick="showForm('counselor')">Counselor</button>
+    <button onclick="showForm('content')">Content Idea</button>
+  </div>
+
+  <div class="form-section" id="counselor-form">
+    <h2>আপনার সমস্যা লিখুন:</h2>
+    <textarea id="counselor-problem" placeholder="আপনার সমস্যাটি লিখুন..."></textarea><br>
+    <button class="submit-btn" onclick="submitForm('counselor')">Apply</button>
+  </div>
+
+  <div class="form-section" id="content-form">
+    <h2>আপনার কাঙ্ক্ষিত কনটেন্ট টাইপ লিখুন:</h2>
+    <textarea id="content-type" placeholder="Funny, Romantic, Horror..."></textarea><br>
+    <input type="text" id="people-count" placeholder="আপনার সাথে কয়জন?" /><br>
+    <button class="submit-btn" onclick="submitForm('content')">Apply</button>
+  </div>
+
+  <script>
+    function showForm(type) {
+      document.getElementById('counselor-form').style.display = 'none';
+      document.getElementById('content-form').style.display = 'none';
+
+      if (type === 'counselor') {
+        document.getElementById('counselor-form').style.display = 'block';
+      } else {
+        document.getElementById('content-form').style.display = 'block';
+      }
+    }
+
+    function submitForm(type) {
+      let message = "আপনার রিকুয়েস্ট রিসিভ করা হয়েছে! শীঘ্রই আপনি রিপ্লাই পাবেন।";
+      alert(message);
+    }
+  </script>
+
+</body>
+</html>
